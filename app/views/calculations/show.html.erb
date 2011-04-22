@@ -1,0 +1,8 @@
+<p>Equation: <%=h @calculation.equation %></p>
+<p>Result: <%=h @calculation.result %></p>
+<p><%= link_to "Do another", new_calculation_path %></p>
+<ul>
+  <% @calculations.each do |calculation| %>
+    <li><%= calculation.equation %> = <%= calculation.result %></li>
+  <% end %>
+</ul>

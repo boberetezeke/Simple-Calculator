@@ -1,0 +1,315 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (8.6ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCalculations (20110422141050)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (7.4ms)[0m   [0mCREATE TABLE "calculations" ("id" serial primary key, "equation" character varying(255), "result" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110422141050')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculatorController#new (for 127.0.0.1 at 2011-04-22 09:30:07) [GET]
+Rendering template within layouts/application
+Rendering calculator/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/calculator/new.html.erb:
+1: <% form_for @calculator do |f| %>
+2:   <%= f.text_field :equation %>
+3:   <%= f.submit_button "calculate!" %>
+4: <% end %>
+
+    app/views/calculator/new.html.erb:1
+
+Rendered rescues/_trace (310.8ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculatorController#new (for 127.0.0.1 at 2011-04-22 09:31:44) [GET]
+Rendering template within layouts/application
+Rendering calculator/new
+
+ActionView::TemplateError (undefined method `calculations_path' for #<ActionView::Base:0x1035b2378>) on line #1 of app/views/calculator/new.html.erb:
+1: <% form_for @calculation do |f| %>
+2:   <%= f.text_field :equation %>
+3:   <%= f.submit_button "calculate!" %>
+4: <% end %>
+
+    app/views/calculator/new.html.erb:1
+
+Rendered rescues/_trace (96.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationController#new (for 127.0.0.1 at 2011-04-22 09:35:07) [GET]
+Rendering template within layouts/application
+Rendering calculation/new
+
+ActionView::TemplateError (undefined method `submit_button' for #<ActionView::Helpers::FormBuilder:0x1032a31c8>) on line #3 of app/views/calculation/new.html.erb:
+1: <% form_for @calculation do |f| %>
+2:   <%= f.text_field :equation %>
+3:   <%= f.submit_button "calculate!" %>
+4: <% end %>
+
+    app/views/calculation/new.html.erb:3
+    app/views/calculation/new.html.erb:1
+
+Rendered rescues/_trace (239.7ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationController#new (for 127.0.0.1 at 2011-04-22 09:37:06) [GET]
+Rendering template within layouts/application
+Rendering calculation/new
+
+ActionView::TemplateError (undefined method `submit_button' for #<ActionView::Helpers::FormBuilder:0x103510d98>) on line #3 of app/views/calculation/new.html.erb:
+1: <% form_for @calculation do |f| %>
+2:   <%= f.text_field :equation %>
+3:   <%= f.submit_button "calculate!" %>
+4: <% end %>
+
+    app/views/calculation/new.html.erb:3
+    app/views/calculation/new.html.erb:1
+
+Rendered rescues/_trace (63.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (3.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationController#new (for 127.0.0.1 at 2011-04-22 09:37:18) [GET]
+Rendering template within layouts/application
+Rendering calculation/new
+
+ActionView::TemplateError (undefined method `submit_button' for #<ActionView::Helpers::FormBuilder:0x1036e2b58>) on line #3 of app/views/calculation/new.html.erb:
+1: <% form_for @calculation do |f| %>
+2:   <%= f.text_field :equation %>
+3:   <%= f.submit_button "calculate!" %>
+4: <% end %>
+
+    app/views/calculation/new.html.erb:3
+    app/views/calculation/new.html.erb:1
+
+Rendered rescues/_trace (60.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationController#new (for 127.0.0.1 at 2011-04-22 09:37:34) [GET]
+Rendering template within layouts/application
+Rendering calculation/new
+
+ActionView::TemplateError (undefined method `submit_button' for #<ActionView::Helpers::FormBuilder:0x1032c29b0>) on line #3 of app/views/calculation/new.html.erb:
+1: <% form_for @calculation do |f| %>
+2:   <%= f.text_field :equation %>
+3:   <%= f.submit_button "calculate!" %>
+4: <% end %>
+
+    app/views/calculation/new.html.erb:3
+    app/views/calculation/new.html.erb:1
+
+Rendered rescues/_trace (140.7ms)
+Rendered rescues/_request_and_response (2.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationController#new (for 127.0.0.1 at 2011-04-22 09:38:04) [GET]
+Rendering template within layouts/application
+Rendering calculation/new
+Completed in 49ms (View: 32, DB: 0) | 200 OK [http://localhost/calculation/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2011-04-22 09:38:12) [POST]
+  Parameters: {"calculation"=>{"equation"=>"3+4"}, "commit"=>"calculate!", "authenticity_token"=>"GpnFAabEhqha5zfx/8UkOtb26c0hlQHsHn82RWxDPNc="}
+
+NameError (uninitialized constant CalculationsController):
+  
+
+Rendered rescues/_trace (172.5ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#new (for 127.0.0.1 at 2011-04-22 09:40:56) [GET]
+
+ActionView::MissingTemplate (Missing template calculations/new.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#new (for 127.0.0.1 at 2011-04-22 09:41:52) [GET]
+Rendering template within layouts/application
+Rendering calculations/new
+Completed in 51ms (View: 40, DB: 0) | 200 OK [http://localhost/calculations/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#create (for 127.0.0.1 at 2011-04-22 09:41:57) [POST]
+  Parameters: {"calculation"=>{"equation"=>"3+4"}, "commit"=>"calculate!", "authenticity_token"=>"GpnFAabEhqha5zfx/8UkOtb26c0hlQHsHn82RWxDPNc="}
+
+ActionController::UnknownAction (No action responded to create. Actions: new and show):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2011-04-22 09:47:57) [POST]
+  Parameters: {"calculation"=>{"equation"=>"3+4"}, "commit"=>"calculate!", "authenticity_token"=>"GpnFAabEhqha5zfx/8UkOtb26c0hlQHsHn82RWxDPNc="}
+
+SyntaxError (/Users/stevetuckner/Projects/RailsTests/calculator/app/controllers/calculations_controller.rb:8: syntax error, unexpected tIVAR, expecting ')'
+    @calculation.result = eval(@calculation.equation)
+                ^):
+  
+
+Rendered rescues/_trace (67.2ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#create (for 127.0.0.1 at 2011-04-22 09:48:24) [POST]
+  Parameters: {"calculation"=>{"equation"=>"3+4"}, "commit"=>"calculate!", "authenticity_token"=>"GpnFAabEhqha5zfx/8UkOtb26c0hlQHsHn82RWxDPNc="}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (24.9ms)[0m   [0;1mINSERT INTO "calculations" ("result", "equation", "created_at", "updated_at") VALUES(7, '3+4', '2011-04-22 14:48:24.084325', '2011-04-22 14:48:24.084325') RETURNING "id"[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3010/calculations/1
+Completed in 95ms (DB: 32) | 302 Found [http://localhost/calculations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#show (for 127.0.0.1 at 2011-04-22 09:48:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCalculation Load (11.0ms)[0m   [0mSELECT * FROM "calculations" WHERE ("calculations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering calculations/show
+Completed in 67ms (View: 33, DB: 11) | 200 OK [http://localhost/calculations/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#new (for 127.0.0.1 at 2011-04-22 09:48:35) [GET]
+Rendering template within layouts/application
+Rendering calculations/new
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://localhost/calculations/new]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#show (for 127.0.0.1 at 2011-04-22 09:51:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCalculation Load (0.7ms)[0m   [0;1mSELECT * FROM "calculations" WHERE ("calculations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering calculations/show
+
+ActionView::TemplateError (undefined local variable or method `new_calculations_path' for #<ActionView::Base:0x1032f4398>) on line #3 of app/views/calculations/show.html.erb:
+1: <p>Equation: <%=h @calculation.equation %></p>
+2: <p>Result: <%=h @calculation.result %></p>
+3: <p><%= link_to "Do another", new_calculations_path %></p>
+
+    app/views/calculations/show.html.erb:3
+
+Rendered rescues/_trace (100.6ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#show (for 127.0.0.1 at 2011-04-22 09:52:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCalculation Load (0.9ms)[0m   [0;1mSELECT * FROM "calculations" WHERE ("calculations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering calculations/show
+Completed in 41ms (View: 26, DB: 1) | 200 OK [http://localhost/calculations/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#new (for 127.0.0.1 at 2011-04-22 09:52:20) [GET]
+Rendering template within layouts/application
+Rendering calculations/new
+Completed in 14ms (View: 4, DB: 0) | 200 OK [http://localhost/calculations/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#create (for 127.0.0.1 at 2011-04-22 09:52:27) [POST]
+  Parameters: {"calculation"=>{"equation"=>"3+6"}, "commit"=>"calculate!", "authenticity_token"=>"GpnFAabEhqha5zfx/8UkOtb26c0hlQHsHn82RWxDPNc="}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "calculations" ("result", "equation", "created_at", "updated_at") VALUES(9, '3+6', '2011-04-22 14:52:27.827555', '2011-04-22 14:52:27.827555') RETURNING "id"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3010/calculations/2
+Completed in 47ms (DB: 2) | 302 Found [http://localhost/calculations]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#show (for 127.0.0.1 at 2011-04-22 09:52:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCalculation Load (1.1ms)[0m   [0mSELECT * FROM "calculations" WHERE ("calculations"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering calculations/show
+Completed in 14ms (View: 3, DB: 1) | 200 OK [http://localhost/calculations/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalculationsController#show (for 127.0.0.1 at 2011-04-22 09:54:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCalculation Load (0.7ms)[0m   [0mSELECT * FROM "calculations" WHERE ("calculations"."id" = 2) [0m
+  [4;36;1mCalculation Load (0.2ms)[0m   [0;1mSELECT * FROM "calculations" [0m
+Rendering template within layouts/application
+Rendering calculations/show
+Completed in 41ms (View: 8, DB: 1) | 200 OK [http://localhost/calculations/2]
